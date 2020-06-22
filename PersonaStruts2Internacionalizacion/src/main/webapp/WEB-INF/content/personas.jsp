@@ -3,34 +3,34 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Formulario Personas</title>
+        <title><s:text name="form.titulo"/></title>
         <s:head/>
     </head>
     <body>
-        <h1>Formulario de personas OGNL!</h1>
+        <h1><s:text name="form.titulo"/></h1>
         <s:form>
-            <s:textfield label="Nombre" name="persona.nombre"/>
-            <s:textfield label="Calle" name="persona.domicilio.calle"/>
-            <s:textfield label="Nº calle" name="persona.domicilio.numeroCalle"/>
-            <s:textfield label="Pais" name="persona.domicilio.pais"/>
-            <s:submit value="Enviar"/>
+            <s:textfield key="form.nombre" name="persona.nombre"/>
+            <s:textfield key="form.calle" name="persona.domicilio.calle"/>
+            <s:textfield key="form.no.calle" name="persona.domicilio.numeroCalle"/>
+            <s:textfield key="form.pais" name="persona.domicilio.pais"/>
+            <s:submit key="form.enviar"/>
         </s:form>
-        
-        <h2>Valores Proporcionados</h2>
-        <p>Nombre:<s:property value="persona.nombre"/></p>
-        <p>Calle:<s:property value="persona.domicilio.calle"/></p>
-        <p>Nº Calle:<s:property value="persona.domicilio.numeroCalle"/></p>
-        <p>Pais:<s:property value="persona.domicilio.pais"/></p>
-        
-        <s:if test="persona.nombre!=null">
-            <s:if test="persona.nombre=='admin'">
-                <p>El usuario es administrador</p>
-            </s:if>
-            <s:else>
-                <p>El usuario NO es administrador</p>
-            </s:else>
-        </s:if>
-        
-        
+
+        <h2><s:text name="form.resultados"/></h2>
+        <p><s:text name="form.nombre"/>: <s:property value="persona.nombre"/></p>
+        <p><s:text name="form.calle"/>: <s:property value="persona.domicilio.calle"/></p>
+        <p><s:text name="form.no.calle"/>: <s:property value="persona.domicilio.numeroCalle"/></p>
+        <p><s:text name="form.pais"/>: <s:property value="persona.domicilio.pais"/></p>
+
+        <s:url var="localeES" action="personas">
+            <s:param name="request_locale">es</s:param>
+        </s:url>
+        <s:url var="localeEN" action="personas">
+            <s:param name="request_locale">en</s:param>
+        </s:url>
+
+        <p><s:a href="%{localeES}"><s:text name="form.idioma.es"/></s:a> |
+            <s:a href="%{localeEN}"><s:text name="form.idioma.en"/></s:a></p>
+
     </body>
 </html>

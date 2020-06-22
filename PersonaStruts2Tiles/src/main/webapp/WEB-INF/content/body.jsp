@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Personas</title>
+        <title>Body</title>
     </head>
     <body>
-        <h1>Personas</h1>
+        <h1>Body</h1>
     </body>
 </html>
