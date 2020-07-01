@@ -1,4 +1,4 @@
-package mauriz.fran;
+package mauriz.fran.controlador;
 
 import java.io.IOException;
 import java.util.List;
